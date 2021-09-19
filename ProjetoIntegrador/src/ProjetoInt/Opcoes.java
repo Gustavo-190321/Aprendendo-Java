@@ -16,7 +16,7 @@ public class Opcoes {
 		String VetorcpfAluno;
 
 		System.out.println("Cadastro de aluno");
-		System.out.println("");
+		System.out.println();
 
 		System.out.println("Id do aluno");
 		String VetorIdAluno = teclado.nextLine();
@@ -33,8 +33,6 @@ public class Opcoes {
 		System.out.println("CPF do aluno");
 		VetorcpfAluno = teclado.nextLine();
 		cpfAluno.add(VetorcpfAluno);
-
-		teclado.close();
 	}
 
 	public void Listar() {
