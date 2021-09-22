@@ -99,7 +99,6 @@ public class Opcoes {
 
 	public void Atualizar() {
 		int opc = 0;
-		IdAluno.remove(VetorIdAluno);
 	
 		do {
 			System.out.println("1-Id Aluno:");
@@ -109,6 +108,7 @@ public class Opcoes {
 			System.out.println("5-Sair");
 			opc = teclado.nextInt();
 			if (opc == 1) {
+			IdAluno.remove(VetorIdAluno);
 			VetorIdAluno = Integer.parseInt(teclado.nextLine());
 			}
 			//else if (opc == 2) {
