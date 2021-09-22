@@ -1,4 +1,4 @@
-package SextaAula;
+package SetimaAula;
 
 public class Conta {
 	private String nomeTitular;
