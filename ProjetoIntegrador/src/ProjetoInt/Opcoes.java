@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Opcoes {
-	private Integer VetorIdAluno;
-	private Integer VetornomeAluno;
-	private Integer VetordataAluno;
-	private Integer VetorcpfAluno;
+	private int VetorIdAluno;
+	private int VetornomeAluno;
+	private int VetordataAluno;
+	private int VetorcpfAluno;
 
 	private ArrayList<Integer> IdAluno = new ArrayList<Integer>();
-
+	
 	public Scanner teclado = new Scanner(System.in);
 
 	public void Cadastrar() {
@@ -19,74 +19,88 @@ public class Opcoes {
 		System.out.println("");
 
 		System.out.println("Id do aluno");
-		VetorIdAluno = Integer.parseInt(teclado.nextLine());
+		VetorIdAluno = teclado.nextInt();
 		IdAluno.add(VetorIdAluno);
 
 		System.out.println("Nome do aluno");
-		VetornomeAluno = Integer.parseInt(teclado.nextLine());
+		VetornomeAluno = teclado.nextInt();
 		IdAluno.add(VetornomeAluno);
 
 		System.out.println("Data de nascimento do aluno");
-		VetordataAluno = Integer.parseInt(teclado.nextLine());
+		VetordataAluno = teclado.nextInt();
 		IdAluno.add(VetordataAluno);
 
 		System.out.println("CPF do aluno");
-		VetorcpfAluno = Integer.parseInt(teclado.nextLine());
+		VetorcpfAluno = teclado.nextInt();
 		IdAluno.add(VetorcpfAluno);
 	}
 
 	public void Listar() {
-		int i;
 		System.out.println("Alunos listados");
 
-		for (i = 0; i < IdAluno.size(); i++) {
-			System.out.println("Id Aluno:" + IdAluno.get(i));
-		}
+		System.out.println("Id Aluno:" + IdAluno.get(0));
+		System.out.println("Nome do Aluno:" + IdAluno.get(1));
+		System.out.println("Data de nascimento do aluno:" + IdAluno.get(2));
+		System.out.println("CPF do Aluno:" + IdAluno.get(3));
 	}
 
 	public void Pesquisar() {
-		// System.out.println("Digite o nome do aluno");
-		// IdAluno = IdAluno.replace("péssimo","ruim");
+		int i;
+		System.out.println("Digite o nome do Aluno");
+		i = teclado.nextInt();
+		if (i != VetornomeAluno) {
+			System.out.println("Digite um Nome Válido");
+		}
+		System.out.println("Nome do Aluno:" + IdAluno.get(1));
+		System.out.println("Id Aluno:" + IdAluno.get(0));
+		System.out.println("Data de nascimento do aluno:" + IdAluno.get(2));
+		System.out.println("CPF do Aluno:" + IdAluno.get(3));
 	}
 
 	public void Atualizar() {
-
+		int i;
+		System.out.println("Digite o id do Aluno");
+		i = teclado.nextInt();
 		System.out.println("Digite o nome do aluno");
-		int valorNome = IdAluno.indexOf(VetornomeAluno);
-		int novoNome = teclado.nextInt();
-
-		if (valorNome == -1) {
-			System.out.println("valor não encontrado");
-
+		if (i != VetorIdAluno) {
+			System.out.println("Digite um id Valido");
 		} else {
-			IdAluno.set(valorNome, novoNome);
+			int valorNome = IdAluno.indexOf(VetornomeAluno);
+			int novoNome = teclado.nextInt();
 
-			System.out.println("Registro alterado com sucesso");
-		}
-		System.out.println("Digite a data de Nascimento do aluno");
-		int valorData = IdAluno.indexOf(VetordataAluno);
-		int novoData = teclado.nextInt();
+			if (valorNome == -1) {
+				System.out.println("valor não encontrado");
 
-		if (valorData == -1) {
-			System.out.println("valor não encontrado");
+			} else {
+				IdAluno.set(valorNome, novoNome);
 
-		} else {
-			IdAluno.set(valorData, novoData);
+				System.out.println("Registro alterado com sucesso");
+			}
+			System.out.println("Digite a data de Nascimento do aluno");
+			int valorData = IdAluno.indexOf(VetordataAluno);
+			int novoData = teclado.nextInt();
 
-			System.out.println("Registro alterado com sucesso");
-		}
+			if (valorData == -1) {
+				System.out.println("valor não encontrado");
 
-		System.out.println("Digite o CPF do aluno");
-		int valorCpf = IdAluno.indexOf(VetorcpfAluno);
-		int novoCpf = teclado.nextInt();
+			} else {
+				IdAluno.set(valorData, novoData);
 
-		if (valorCpf == -1) {
-			System.out.println("valor não encontrado");
+				System.out.println("Registro alterado com sucesso");
+			}
 
-		} else {
-			IdAluno.set(valorCpf, novoCpf);
+			System.out.println("Digite o CPF do aluno");
+			int valorCpf = IdAluno.indexOf(VetorcpfAluno);
+			int novoCpf = teclado.nextInt();
 
-			System.out.println("Registro alterado com sucesso");
+			if (valorCpf == -1) {
+				System.out.println("valor não encontrado");
+
+			} else {
+				IdAluno.set(valorCpf, novoCpf);
+
+				System.out.println("Registro alterado com sucesso");
+			}
 		}
 	}
 
@@ -94,10 +108,11 @@ public class Opcoes {
 		int i;
 		System.out.println("Digite o id do Aluno");
 		i = teclado.nextInt();
-		
-		if (i == VetorIdAluno) {
-			IdAluno.clear();
 
+		if (i != VetorIdAluno) {
+			System.out.println("Digite um ID valido");
+		} else {
+			IdAluno.clear();
 		}
 	}
 }
