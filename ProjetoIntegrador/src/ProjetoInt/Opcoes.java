@@ -7,13 +7,12 @@ public class Opcoes {
 	private String VetornomeAluno;
 	private int VetordataAluno;
 	private int VetorcpfAluno;
-	
+
 	Aluno aluno1 = new Aluno(VetorIdAluno, VetornomeAluno, VetorIdAluno, VetorIdAluno);
-	
+
 	public Scanner teclado = new Scanner(System.in);
 
 	public void Cadastrar() {
-		
 
 		System.out.println("Cadastro de aluno");
 		System.out.println("");
@@ -39,31 +38,51 @@ public class Opcoes {
 	public void Listar() {
 		try {
 			System.out.println("Alunos listados");
-			aluno1.printId();
-			aluno1.printStr();
-			aluno1.printData();
-			aluno1.printCpf();
+			aluno1.printId(VetorIdAluno);
+			aluno1.printStr(VetornomeAluno);
+			aluno1.printData(VetordataAluno);
+			aluno1.printCpf(VetorcpfAluno);
 		} catch (Exception e) {
 			System.out.println("Lista Vazia");
 		}
 	}
 
 	public void Pesquisar() {
-		String i;
 		System.out.println("Digite o nome do Aluno");
-		i = teclado.nextLine();
+		String i = teclado.nextLine();
 		if (i.equals(VetornomeAluno)) {
-			aluno1.printId();
-			aluno1.printStr();
-			aluno1.printData();
-			aluno1.printCpf();
+			aluno1.printStr(VetornomeAluno);
+			aluno1.printData(VetordataAluno);
+			aluno1.printCpf(VetorcpfAluno);
 		} else {
 			System.out.println("Digite um Nome Válido");
 		}
 	}
 
 	public void Atualizar() {
-	
+		int i;
+		System.out.println("Digite o id do Aluno");
+		i = teclado.nextInt();
+		if (i != VetorIdAluno) {
+			System.out.println("Digite um id Valido");
+		} else {
+			System.out.println("Digite o nome do aluno");
+			String novoNome = teclado.nextLine();
+			aluno1.UpdateStr(VetornomeAluno, novoNome);
+			System.out.println("Registro alterado com sucesso");
+		}
+		System.out.println("Digite a data de Nascimento do aluno");
+		int novoData = teclado.nextInt();
+		aluno1.Update(VetordataAluno, novoData);
+
+		System.out.println("Registro alterado com sucesso");
+
+		System.out.println("Digite o CPF do aluno");
+		int novoCpf = teclado.nextInt();
+		aluno1.Update(VetorcpfAluno, novoCpf);
+
+		System.out.println("Registro alterado com sucesso");
+
 	}
 
 	public void Remover() {
@@ -74,7 +93,10 @@ public class Opcoes {
 		if (i != VetorIdAluno) {
 			System.out.println("Digite um ID valido");
 		} else {
-				aluno1.Remove(VetorIdAluno, VetornomeAluno, VetordataAluno, VetorcpfAluno);
-			}
+			aluno1.Remove(VetorIdAluno);
+			aluno1.RemoveStr(VetornomeAluno);
+			aluno1.Remove(VetordataAluno);
+			aluno1.Remove(VetorcpfAluno);
 		}
 	}
+}
