@@ -11,6 +11,7 @@ public class PrincipalPI {
 		Scanner teclado = new Scanner(System.in);
 
 		do {
+			System.out.print("\n");
 			System.out.println("Cadastro de Estudantes");
 			System.out.println("1 – Cadastrar");
 			System.out.println("2 – Listar");
@@ -37,7 +38,6 @@ public class PrincipalPI {
 			else if (opc == 5) {
 				altOp.Remover();
 			}
-			
 		} while (opc != 6);
 
 		System.out.print("Voce Saiu");
