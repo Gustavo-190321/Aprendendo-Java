@@ -1,118 +1,80 @@
 package ProjetoInt;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Opcoes {
 	private int VetorIdAluno;
-	private int VetornomeAluno;
+	private String VetornomeAluno;
 	private int VetordataAluno;
 	private int VetorcpfAluno;
-
-	private ArrayList<Integer> IdAluno = new ArrayList<Integer>();
+	
+	Aluno aluno1 = new Aluno(VetorIdAluno, VetornomeAluno, VetorIdAluno, VetorIdAluno);
 	
 	public Scanner teclado = new Scanner(System.in);
 
 	public void Cadastrar() {
+		
 
 		System.out.println("Cadastro de aluno");
 		System.out.println("");
 
 		System.out.println("Id do aluno");
-		VetorIdAluno = teclado.nextInt();
-		IdAluno.add(VetorIdAluno);
+		VetorIdAluno = Integer.parseInt(teclado.nextLine());
+		aluno1.addId(VetorIdAluno);
 
 		System.out.println("Nome do aluno");
-		VetornomeAluno = teclado.nextInt();
-		IdAluno.add(VetornomeAluno);
+		VetornomeAluno = teclado.nextLine();
+		aluno1.addNome(VetornomeAluno);
 
 		System.out.println("Data de nascimento do aluno");
-		VetordataAluno = teclado.nextInt();
-		IdAluno.add(VetordataAluno);
+		VetordataAluno = Integer.parseInt(teclado.nextLine());
+		aluno1.addData(VetordataAluno);
 
 		System.out.println("CPF do aluno");
-		VetorcpfAluno = teclado.nextInt();
-		IdAluno.add(VetorcpfAluno);
+		VetorcpfAluno = Integer.parseInt(teclado.nextLine());
+		aluno1.addCpf(VetorcpfAluno);
+
 	}
 
 	public void Listar() {
-		System.out.println("Alunos listados");
-
-		System.out.println("Id Aluno:" + IdAluno.get(0));
-		System.out.println("Nome do Aluno:" + IdAluno.get(1));
-		System.out.println("Data de nascimento do aluno:" + IdAluno.get(2));
-		System.out.println("CPF do Aluno:" + IdAluno.get(3));
+		try {
+			System.out.println("Alunos listados");
+			aluno1.printId();
+			aluno1.printStr();
+			aluno1.printData();
+			aluno1.printCpf();
+		} catch (Exception e) {
+			System.out.println("Lista Vazia");
+		}
 	}
 
 	public void Pesquisar() {
-		int i;
+		String i;
 		System.out.println("Digite o nome do Aluno");
-		i = teclado.nextInt();
-		if (i != VetornomeAluno) {
+		i = teclado.nextLine();
+		if (i.equals(VetornomeAluno)) {
+			aluno1.printId();
+			aluno1.printStr();
+			aluno1.printData();
+			aluno1.printCpf();
+		} else {
 			System.out.println("Digite um Nome Válido");
 		}
-		System.out.println("Nome do Aluno:" + IdAluno.get(1));
-		System.out.println("Id Aluno:" + IdAluno.get(0));
-		System.out.println("Data de nascimento do aluno:" + IdAluno.get(2));
-		System.out.println("CPF do Aluno:" + IdAluno.get(3));
 	}
 
 	public void Atualizar() {
-		int i;
-		System.out.println("Digite o id do Aluno");
-		i = teclado.nextInt();
-		System.out.println("Digite o nome do aluno");
-		if (i != VetorIdAluno) {
-			System.out.println("Digite um id Valido");
-		} else {
-			int valorNome = IdAluno.indexOf(VetornomeAluno);
-			int novoNome = teclado.nextInt();
-
-			if (valorNome == -1) {
-				System.out.println("valor não encontrado");
-
-			} else {
-				IdAluno.set(valorNome, novoNome);
-
-				System.out.println("Registro alterado com sucesso");
-			}
-			System.out.println("Digite a data de Nascimento do aluno");
-			int valorData = IdAluno.indexOf(VetordataAluno);
-			int novoData = teclado.nextInt();
-
-			if (valorData == -1) {
-				System.out.println("valor não encontrado");
-
-			} else {
-				IdAluno.set(valorData, novoData);
-
-				System.out.println("Registro alterado com sucesso");
-			}
-
-			System.out.println("Digite o CPF do aluno");
-			int valorCpf = IdAluno.indexOf(VetorcpfAluno);
-			int novoCpf = teclado.nextInt();
-
-			if (valorCpf == -1) {
-				System.out.println("valor não encontrado");
-
-			} else {
-				IdAluno.set(valorCpf, novoCpf);
-
-				System.out.println("Registro alterado com sucesso");
-			}
-		}
+	
 	}
 
 	public void Remover() {
-		int i;
+		Integer i;
 		System.out.println("Digite o id do Aluno");
 		i = teclado.nextInt();
 
 		if (i != VetorIdAluno) {
 			System.out.println("Digite um ID valido");
 		} else {
-			IdAluno.clear();
+				aluno1.Remove(VetorIdAluno, VetornomeAluno, VetordataAluno, VetorcpfAluno);
+			}
 		}
 	}
-}
