@@ -80,7 +80,7 @@ public class Opcoes {
 			aluno1.printDepartamento(VetorDepartamentoAluno);
 			aluno1.printDisciplina(VetorDisciplinaAluno);
 		} else {
-			System.out.println("Digite um Nome Válido");
+			System.out.println("Digite um Nome VÃ¡lido");
 			Pesquisar();
 		}
 	}
