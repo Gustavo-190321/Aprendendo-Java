@@ -49,6 +49,8 @@ public class Opcoes {
 			System.out.println("Disciplina do aluno");
 			VetorDisciplinaAluno = teclado.nextLine();
 			aluno1.addDisciplina(VetorDisciplinaAluno);
+			
+			System.out.println("Cadastro efetuado com sucesso");
 
 		} catch (Exception e) {
 			System.out.println("Lista Vazia");
@@ -80,7 +82,7 @@ public class Opcoes {
 			aluno1.printDepartamento(VetorDepartamentoAluno);
 			aluno1.printDisciplina(VetorDisciplinaAluno);
 		} else {
-			System.out.println("Digite um Nome VÃ¡lido");
+			System.out.println("Digite um Nome Valido");
 			Pesquisar();
 		}
 	}

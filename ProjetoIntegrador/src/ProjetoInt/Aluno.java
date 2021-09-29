@@ -35,7 +35,6 @@ public class Aluno {
 	public void addId(String id) {
 		if (id.length() > 0 && 5 >= id.length()) {
 			IdAluno.add(id);
-			// Opcoes.Cadastrar();
 		} else
 			System.out.println("Erro ao incluir Id");
 	}
@@ -79,7 +78,7 @@ public class Aluno {
 	}
 
 	public void addDisciplina(String disciplina) {
-		if (disciplina.length() > 0 || 15 >= disciplina.length()) {
+		if (disciplina.length() > 0 && 15 >= disciplina.length()) {
 			disciplinaAluno.add(disciplina);
 		} else
 			System.out.println("Erro ao incluir Disciplina");
