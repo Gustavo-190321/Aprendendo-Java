@@ -1,4 +1,4 @@
-package empresa;
+package escola;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FuncionarioDAO {
+public class AlunoDAO {
 	
 	private Connection connection;
 	private String mensagem;
@@ -30,7 +30,7 @@ public class FuncionarioDAO {
 		return mensagem;
 	}
 
-	public boolean inserir(Funcionario funcionario) {
+	public boolean inserir(Aluno aluno) {
 		
 		String query = null;
 		PreparedStatement ps = null;
@@ -44,15 +44,15 @@ public class FuncionarioDAO {
 			return false;
 		}
 		
-		query = "INSERT INTO tb_funcionario (id, nome, salario, cargo)" +
+		query = "INSERT INTO tb_aluno (idAluno, nome, cpf, dataNascimento)" +
 				"VALUES (?, ?, ?, ?)";
 
 		try {
 			ps = connection.prepareStatement(query);
-			ps.setInt(1, funcionario.getId());
-			ps.setString(2, funcionario.getNome());
-			ps.setDouble(3, funcionario.getSalario());
-			ps.setString(4, funcionario.getCargo());
+			ps.setInt(1, aluno.getIdAluno());
+			ps.setString(2, aluno.getNome());
+			ps.setInt(3, aluno.getCpf());
+			ps.setInt(4, aluno.getDataNascimento());
 
 			inserted = ps.executeUpdate();
 			
@@ -81,9 +81,9 @@ public class FuncionarioDAO {
 		return status;
 	}
 	
-	public List<Funcionario> listar() {
+	public List<Aluno> listar() {
 		
-		List<Funcionario> lista = null;	
+		List<Aluno> lista = null;	
 		String query = null;
 		Statement s = null;
 		int count = 0;
@@ -95,24 +95,24 @@ public class FuncionarioDAO {
 			return null;
 		}
 
-		query = "SELECT * FROM tb_funcionario";
+		query = "SELECT * FROM tb_aluno";
 		
 		try {
 			s = connection.createStatement();
 			ResultSet rs = s.executeQuery(query);
 			
-			lista = new ArrayList<Funcionario>();
+			lista = new ArrayList<Aluno>();
 			
 			while (rs.next()) {
 				
-				Funcionario funcionario = new Funcionario();
+				Aluno aluno = new Aluno();
 				
-				funcionario.setId(rs.getInt("id"));
-				funcionario.setNome(rs.getString("nome"));
-				funcionario.setSalario(rs.getDouble("salario"));
-				funcionario.setCargo(rs.getString("cargo"));
+				aluno.setIdAluno(rs.getInt("idAluno"));
+				aluno.setNome(rs.getString("nome"));
+				aluno.setCpf(rs.getInt("cpf"));
+				aluno.setDataNascimento(rs.getInt("dataNascimento"));
 				
-				lista.add(funcionario);
+				lista.add(aluno);
 				count++;
 			}
 			
@@ -138,9 +138,9 @@ public class FuncionarioDAO {
 		return lista;
 	}
 	
-	public List<Funcionario> pesquisar(String nome) {
+	public List<Aluno> pesquisar(String nome) {
 		
-		List<Funcionario> lista = null;
+		List<Aluno> lista = null;
 		String query = null;
 		PreparedStatement ps = null;
 		int count = 0;
@@ -152,7 +152,7 @@ public class FuncionarioDAO {
 			return null;
 		}
 
-		query = "SELECT * FROM tb_funcionario WHERE nome ILIKE ?";
+		query = "SELECT * FROM tb_aluno WHERE nome ILIKE ?";
 		
 		try {
 			ps = connection.prepareStatement(query);
@@ -160,18 +160,18 @@ public class FuncionarioDAO {
 			
 			ResultSet rs = ps.executeQuery();
 			
-			lista = new ArrayList<Funcionario>();
+			lista = new ArrayList<Aluno>();
 			
 			while (rs.next()) {
 				
-				Funcionario funcionario = new Funcionario();
+				Aluno aluno = new Aluno();
 				
-				funcionario.setId(rs.getInt("id"));
-				funcionario.setNome(rs.getString("nome"));
-				funcionario.setSalario(rs.getDouble("salario"));
-				funcionario.setCargo(rs.getString("cargo"));
+				aluno.setIdAluno (rs.getInt("idAluno"));
+				aluno.setNome(rs.getString("nome"));
+				aluno.setCpf(rs.getInt("cpf"));
+				aluno.setDataNascimento(rs.getInt("dataNascimento"));
 				
-				lista.add(funcionario);
+				lista.add(aluno);
 				count++;
 			}
 			
@@ -210,7 +210,7 @@ public class FuncionarioDAO {
 			return false;
 		}
 
-		query = "DELETE FROM tb_funcionario WHERE id = ?";
+		query = "DELETE FROM tb_aluno WHERE id = ?";
 
 		try {
 			ps = connection.prepareStatement(query);
@@ -243,7 +243,7 @@ public class FuncionarioDAO {
 		return status;
 	}
 	
-	public boolean atualizar(Funcionario funcionario) {
+	public boolean atualizar(Aluno aluno) {
 		
 		String query = null;
 		PreparedStatement ps = null;
@@ -257,15 +257,15 @@ public class FuncionarioDAO {
 			return false;
 		}
 
-		query = "UPDATE tb_funcionario SET id=?, nome=?, salario=?, cargo=?";
+		query = "UPDATE tb_aluno SET idAluno=?, nome=?, cpf=?, dataNascimento=?";
 
 		try {
 			ps = connection.prepareStatement(query);
 			
-			ps.setInt(1, funcionario.getId());
-			ps.setString(2, funcionario.getNome());
-			ps.setDouble(3, funcionario.getSalario());
-			ps.setString(4, funcionario.getCargo());
+			ps.setInt(1, aluno.getIdAluno());
+			ps.setString(2, aluno.getNome());
+			ps.setInt(3, aluno.getCpf());
+			ps.setInt(4, aluno.getDataNascimento());
 			
 			updated = ps.executeUpdate();
 		

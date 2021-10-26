@@ -1,4 +1,4 @@
-package empresa;
+package escola;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ public class ConnectionFactory {
 	private static Connection connection;
 
 	private static String driverClass = "com.mysql.cj.jdbc.Driver";
-	private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/db_empresa?useTimezone=true&serverTimezone=UTC";
+	private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/db_proj?useTimezone=true&serverTimezone=UTC";
 	
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "";
