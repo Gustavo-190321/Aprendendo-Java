@@ -50,9 +50,9 @@ public class Escola {
 	}
 
 	public void atualizarAluno(Aluno aluno) {
-//		//System.out.println("\nDigite o id do aluno:");
-//		//int id = Integer.parseInt(teclado.nextLine());
-		alunoDAO.atualizar(aluno);
+		System.out.println("\nDigite o id do aluno:");
+		int id = Integer.parseInt(teclado.nextLine());
+		alunoDAO.atualizar(id,aluno);
 	}
 
 	public void removeAluno() {

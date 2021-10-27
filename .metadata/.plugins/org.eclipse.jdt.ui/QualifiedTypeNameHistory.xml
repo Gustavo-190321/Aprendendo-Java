@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="java.util.concurrent.ExecutionException"/>
     <fullyQualifiedTypeName name="ProjetoInt.PrincipalPI"/>
     <fullyQualifiedTypeName name="ProjetoInt.Opcoes"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="Prova.Funcionario"/>
     <fullyQualifiedTypeName name="escola.Escola"/>
@@ -17,4 +16,5 @@
     <fullyQualifiedTypeName name="NonaAula.Gato"/>
     <fullyQualifiedTypeName name="NonaAula.Cachorro"/>
     <fullyQualifiedTypeName name="NonaAula.Passaro"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

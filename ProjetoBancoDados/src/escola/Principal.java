@@ -31,11 +31,6 @@ public class Principal {
 
 		Aluno aluno = new Aluno();
 		
-		System.out.println("\nInserir um Aluno");
-		System.out.println("Id: ");
-		int id = Integer.parseInt(teclado.nextLine());
-		aluno.setIdAluno(id);
-		
 		System.out.println("Nome: ");
 		aluno.setNome(teclado.nextLine());
 		
@@ -47,7 +42,7 @@ public class Principal {
 		int data = Integer.parseInt(teclado.nextLine());
 		aluno.setDataNascimento(data);
 		
-		escola.cadastrarAluno(aluno);
+		escola.atualizarAluno(aluno);
 	}
 	
 	public static void main(String[] args) {
