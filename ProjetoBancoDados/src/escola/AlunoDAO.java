@@ -152,7 +152,7 @@ public class AlunoDAO {
 			return null;
 		}
 
-		query = "SELECT * FROM tb_aluno WHERE nome ILIKE ?";
+		query = "SELECT * FROM tb_aluno WHERE nome = ?";
 		
 		try {
 			ps = connection.prepareStatement(query);
@@ -210,7 +210,7 @@ public class AlunoDAO {
 			return false;
 		}
 
-		query = "DELETE FROM tb_aluno WHERE id = ?";
+		query = "DELETE FROM tb_aluno WHERE idAluno = ?";
 
 		try {
 			ps = connection.prepareStatement(query);

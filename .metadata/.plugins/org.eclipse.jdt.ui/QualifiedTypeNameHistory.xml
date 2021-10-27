@@ -10,6 +10,11 @@
     <fullyQualifiedTypeName name="ProjetoInt.Opcoes"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="Prova.Funcionario"/>
+    <fullyQualifiedTypeName name="escola.Escola"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="NonaAula.PetShop"/>
+    <fullyQualifiedTypeName name="NonaAula.Gato"/>
+    <fullyQualifiedTypeName name="NonaAula.Cachorro"/>
+    <fullyQualifiedTypeName name="NonaAula.Passaro"/>
 </qualifiedTypeNameHistroy>

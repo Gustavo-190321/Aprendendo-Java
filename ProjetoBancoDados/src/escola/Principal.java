@@ -27,6 +27,29 @@ public class Principal {
 		escola.cadastrarAluno(aluno);
 	}
 	
+	public static void atualizarAluno(Scanner teclado, Escola escola) {
+
+		Aluno aluno = new Aluno();
+		
+		System.out.println("\nInserir um Aluno");
+		System.out.println("Id: ");
+		int id = Integer.parseInt(teclado.nextLine());
+		aluno.setIdAluno(id);
+		
+		System.out.println("Nome: ");
+		aluno.setNome(teclado.nextLine());
+		
+		System.out.println("CPF: ");
+		int cpf = Integer.parseInt(teclado.nextLine());
+		aluno.setCpf(cpf);
+		
+		System.out.println("Data de Nascimento: ");
+		int data = Integer.parseInt(teclado.nextLine());
+		aluno.setDataNascimento(data);
+		
+		escola.cadastrarAluno(aluno);
+	}
+	
 	public static void main(String[] args) {
 		
 		Scanner teclado = new Scanner(System.in);
@@ -57,13 +80,14 @@ public class Principal {
 			}
 
 			else if (opc == 3) {
-				
+				//Pesquisar aluno
+				escola.PesquisarAluno();
 			} 
 			else if (opc == 4) {
-				
+				atualizarAluno(teclado,escola);
 			} 
 			else if (opc == 5) {
-				
+				escola.removeAluno();
 			}
 		} while (opc != 6);
 
