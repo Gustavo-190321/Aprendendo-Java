@@ -221,14 +221,14 @@ public class AlunoDAO {
 			return false;
 		}
 
-		query = "UPDATE tb_aluno SET nome=?, cpf=?, dataNascimento=?";
+		query = "UPDATE tb_aluno SET nome=?, cpf=?, dataNascimento=? WHERE idAluno = ?";
 
 		try {
 			ps = connection.prepareStatement(query);
-			ps.setInt(1, id);
-			ps.setString(2, aluno.getNome());
-			ps.setInt(3, aluno.getCpf());
-			ps.setInt(4, aluno.getDataNascimento());
+			ps.setString(1, aluno.getNome());
+			ps.setInt(2, aluno.getCpf());
+			ps.setInt(3, aluno.getDataNascimento());
+			ps.setInt(4, id);
 			
 			updated = ps.executeUpdate();
 			
@@ -270,6 +270,7 @@ public class AlunoDAO {
 		connection = ConnectionFactory.getConnection();
 
 		if (connection == null) {
+			System.out.println("Falha de Conexão");
 			mensagem = FALHA_CONEXAO;
 			return false;
 		}
