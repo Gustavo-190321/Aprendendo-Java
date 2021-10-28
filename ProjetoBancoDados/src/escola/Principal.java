@@ -17,12 +17,10 @@ public class Principal {
 		aluno.setNome(teclado.nextLine());
 		
 		System.out.println("CPF: ");
-		int cpf = Integer.parseInt(teclado.nextLine());
-		aluno.setCpf(cpf);
+		aluno.setCpf(teclado.nextLine());
 		
 		System.out.println("Data de Nascimento: ");
-		int data = Integer.parseInt(teclado.nextLine());
-		aluno.setDataNascimento(data);
+		aluno.setDataNascimento(teclado.nextLine());
 		
 		escola.cadastrarAluno(aluno);
 	}
@@ -35,12 +33,10 @@ public class Principal {
 		aluno.setNome(teclado.nextLine());
 		
 		System.out.println("CPF: ");
-		int cpf = Integer.parseInt(teclado.nextLine());
-		aluno.setCpf(cpf);
+		aluno.setCpf(teclado.nextLine());
 		
 		System.out.println("Data de Nascimento: ");
-		int data = Integer.parseInt(teclado.nextLine());
-		aluno.setDataNascimento(data);
+		aluno.setDataNascimento(teclado.nextLine());
 		
 		escola.atualizarAluno(aluno);
 	}

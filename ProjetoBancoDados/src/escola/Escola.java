@@ -19,7 +19,7 @@ public class Escola {
 
 	public void listarAlunos() {
 
-		System.out.println("\nAlunos cadastrados:");
+		System.out.println("\nAlunos cadastrados:\n");
 
 		List<Aluno> lista = alunoDAO.listar();
 
@@ -28,7 +28,7 @@ public class Escola {
 		while (iterator.hasNext()) {
 			Aluno aluno = iterator.next();
 
-			System.out.println(aluno.getIdAluno() + " | " + aluno.getNome() + " | " + aluno.getCpf() + " | "
+			System.out.println("Id: "+aluno.getIdAluno() + "\nNome: " + aluno.getNome() + "\nCPF: " + aluno.getCpf() + "\nData de Nascimento: "
 					+ aluno.getDataNascimento());
 			System.out.println();
 		}

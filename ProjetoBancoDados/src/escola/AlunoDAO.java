@@ -49,8 +49,8 @@ public class AlunoDAO {
 			ps = connection.prepareStatement(query);
 			ps.setInt(1, aluno.getIdAluno());
 			ps.setString(2, aluno.getNome());
-			ps.setInt(3, aluno.getCpf());
-			ps.setInt(4, aluno.getDataNascimento());
+			ps.setString(3, aluno.getCpf());
+			ps.setString(4, aluno.getDataNascimento());
 
 			inserted = ps.executeUpdate();
 
@@ -111,8 +111,8 @@ public class AlunoDAO {
 
 				aluno.setIdAluno(rs.getInt("idAluno"));
 				aluno.setNome(rs.getString("nome"));
-				aluno.setCpf(rs.getInt("cpf"));
-				aluno.setDataNascimento(rs.getInt("dataNascimento"));
+				aluno.setCpf(rs.getString("cpf"));
+				aluno.setDataNascimento(rs.getString("dataNascimento"));
 
 				lista.add(aluno);
 				count++;
@@ -174,8 +174,8 @@ public class AlunoDAO {
 
 				aluno.setIdAluno(rs.getInt("idAluno"));
 				aluno.setNome(rs.getString("nome"));
-				aluno.setCpf(rs.getInt("cpf"));
-				aluno.setDataNascimento(rs.getInt("dataNascimento"));
+				aluno.setCpf(rs.getString("cpf"));
+				aluno.setDataNascimento(rs.getString("dataNascimento"));
 
 				lista.add(aluno);
 				count++;
@@ -226,8 +226,8 @@ public class AlunoDAO {
 		try {
 			ps = connection.prepareStatement(query);
 			ps.setString(1, aluno.getNome());
-			ps.setInt(2, aluno.getCpf());
-			ps.setInt(3, aluno.getDataNascimento());
+			ps.setString(2, aluno.getCpf());
+			ps.setString(3, aluno.getDataNascimento());
 			ps.setInt(4, id);
 			
 			updated = ps.executeUpdate();

@@ -1,35 +1,54 @@
 package escola;
 
 public class Aluno {
-	
+
 	private int idAluno;
 	private String nome;
-	private Integer cpf;
-	private int dataNascimento;
-	
+	private String cpf;
+	private String dataNascimento;
+
 	public int getIdAluno() {
 		return idAluno;
 	}
+
 	public void setIdAluno(int idAluno) {
 		this.idAluno = idAluno;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
-		this.nome = nome;
+		if (nome.length() > 0 && 20 >= nome.length()) {
+			this.nome = nome;
+		} else {
+			System.out.println("Digite um nome valido");
+		}
 	}
-	public Integer getCpf() {
+
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(Integer cpf) {
-		this.cpf = cpf;
+
+	public void setCpf(String cpf) {
+		if (cpf.length() == 11) {
+			this.cpf = cpf;
+		} else {
+			System.out.println("Digite um CPF valido");
+		}
 	}
-	public int getDataNascimento() {
+
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(int dataNascimento) {
-		this.dataNascimento = dataNascimento;
+
+	public void setDataNascimento(String dataNascimento) {
+		if (dataNascimento.length() > 8 && 10 >= dataNascimento.length()) {
+			this.dataNascimento = dataNascimento;
+		} else {
+			System.out.println("Digite uma Data de nascimento valida");
+		}
 	}
-	
+
 }
