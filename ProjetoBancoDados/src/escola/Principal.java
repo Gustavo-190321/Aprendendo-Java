@@ -22,6 +22,16 @@ public class Principal {
 		System.out.println("Data de Nascimento: ");
 		aluno.setDataNascimento(teclado.nextLine());
 		
+		System.out.println("Nome do Tutor: ");
+		aluno.setTutorNome(teclado.nextLine());
+		
+		System.out.println("Departamento: ");
+		aluno.setDepartamento(teclado.nextLine());
+		
+		System.out.println("Disciplina: ");
+		aluno.setDisciplina(teclado.nextLine());
+		
+		
 		escola.cadastrarAluno(aluno);
 	}
 	
@@ -37,6 +47,15 @@ public class Principal {
 		
 		System.out.println("Data de Nascimento: ");
 		aluno.setDataNascimento(teclado.nextLine());
+		
+		System.out.println("Nome do Tutor: ");
+		aluno.setTutorNome(teclado.nextLine());
+		
+		System.out.println("Departamento: ");
+		aluno.setDepartamento(teclado.nextLine());
+		
+		System.out.println("Disciplina: ");
+		aluno.setDisciplina(teclado.nextLine());
 		
 		escola.atualizarAluno(aluno);
 	}
@@ -75,9 +94,11 @@ public class Principal {
 				escola.PesquisarAluno();
 			} 
 			else if (opc == 4) {
+				//Atualiza aluno
 				atualizarAluno(teclado,escola);
 			} 
 			else if (opc == 5) {
+				//Remove aluno
 				escola.removeAluno();
 			}
 		} while (opc != 6);

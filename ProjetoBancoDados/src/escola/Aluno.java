@@ -1,11 +1,15 @@
 package escola;
 
-public class Aluno {
+public class Aluno extends TutorAluno {
 
 	private int idAluno;
 	private String nome;
 	private String cpf;
 	private String dataNascimento;
+
+	public Aluno() {
+
+	}
 
 	public int getIdAluno() {
 		return idAluno;
@@ -20,11 +24,10 @@ public class Aluno {
 	}
 
 	public void setNome(String nome) {
-		if (nome.length() > 0 && 20 >= nome.length()) {
+		if (nome.length() > 0 && 20 >= nome.length())
 			this.nome = nome;
-		} else {
+		else
 			System.out.println("Digite um nome valido");
-		}
 	}
 
 	public String getCpf() {
@@ -32,11 +35,10 @@ public class Aluno {
 	}
 
 	public void setCpf(String cpf) {
-		if (cpf.length() == 11) {
+		if (cpf.length() == 11)
 			this.cpf = cpf;
-		} else {
+		else
 			System.out.println("Digite um CPF valido");
-		}
 	}
 
 	public String getDataNascimento() {
@@ -44,11 +46,11 @@ public class Aluno {
 	}
 
 	public void setDataNascimento(String dataNascimento) {
-		if (dataNascimento.length() > 8 && 10 >= dataNascimento.length()) {
+		if (dataNascimento.length() > 6 && 10 >= dataNascimento.length())
 			this.dataNascimento = dataNascimento;
-		} else {
+		else
 			System.out.println("Digite uma Data de nascimento valida");
-		}
+
 	}
 
 }

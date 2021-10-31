@@ -28,8 +28,8 @@ public class Escola {
 		while (iterator.hasNext()) {
 			Aluno aluno = iterator.next();
 
-			System.out.println("Id: "+aluno.getIdAluno() + "\nNome: " + aluno.getNome() + "\nCPF: " + aluno.getCpf() + "\nData de Nascimento: "
-					+ aluno.getDataNascimento());
+			System.out.println("Id: "+aluno.getIdAluno() + "\nNome: " + aluno.getNome() + "\nCPF: " + aluno.getCpf() + "\nData de Nascimento: " + aluno.getDataNascimento()
+			+ "\nNome do Tutor: " + aluno.getTutorNome() + "\nDepartamento: " + aluno.getDepartamento() + "\nDisciplina: " + aluno.getDisciplina());
 			System.out.println();
 		}
 	}
@@ -43,7 +43,7 @@ public class Escola {
 		while (iterator.hasNext()) {
 			Aluno aluno = iterator.next();
 
-			System.out.println(aluno.getIdAluno() + " | " + aluno.getNome() + " | " + aluno.getCpf() + " | "
+			System.out.println("Id: "+aluno.getIdAluno() + "\nNome: " + aluno.getNome() + "\nCPF: " + aluno.getCpf() + "\nData de Nascimento: "
 					+ aluno.getDataNascimento());
 			System.out.println();
 		}

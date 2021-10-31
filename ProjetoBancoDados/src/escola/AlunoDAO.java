@@ -43,7 +43,7 @@ public class AlunoDAO {
 			return false;
 		}
 
-		query = "INSERT INTO tb_aluno (idAluno, nome, cpf, dataNascimento)" + "VALUES (?, ?, ?, ?)";
+		query = "INSERT INTO tb_aluno (idAluno, nome, cpf, dataNascimento, nomeTutor, departamento, disciplina)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			ps = connection.prepareStatement(query);
@@ -51,6 +51,9 @@ public class AlunoDAO {
 			ps.setString(2, aluno.getNome());
 			ps.setString(3, aluno.getCpf());
 			ps.setString(4, aluno.getDataNascimento());
+			ps.setString(5, aluno.getTutorNome());
+			ps.setString(6, aluno.getDepartamento());
+			ps.setString(7, aluno.getDisciplina());
 
 			inserted = ps.executeUpdate();
 
@@ -113,6 +116,9 @@ public class AlunoDAO {
 				aluno.setNome(rs.getString("nome"));
 				aluno.setCpf(rs.getString("cpf"));
 				aluno.setDataNascimento(rs.getString("dataNascimento"));
+				aluno.setTutorNome(rs.getString("nomeTutor"));
+				aluno.setDepartamento(rs.getString("departamento"));
+				aluno.setDisciplina(rs.getString("disciplina"));
 
 				lista.add(aluno);
 				count++;
@@ -158,7 +164,7 @@ public class AlunoDAO {
 			return null;
 		}
 
-		query = "SELECT * FROM db_proj.tb_aluno WHERE nome = ?";
+		query = "SELECT * FROM tb_aluno WHERE nome = ?";
 
 		try {
 			ps = connection.prepareStatement(query);
@@ -221,14 +227,18 @@ public class AlunoDAO {
 			return false;
 		}
 
-		query = "UPDATE tb_aluno SET nome=?, cpf=?, dataNascimento=? WHERE idAluno = ?";
+		query = "UPDATE tb_aluno SET nome=?, cpf=?, dataNascimento=?, nomeTutor=?, departamento=?, disciplina=?  WHERE idAluno = ?";
 
 		try {
 			ps = connection.prepareStatement(query);
 			ps.setString(1, aluno.getNome());
 			ps.setString(2, aluno.getCpf());
 			ps.setString(3, aluno.getDataNascimento());
-			ps.setInt(4, id);
+			ps.setString(4, aluno.getTutorNome());
+			ps.setString(5, aluno.getDepartamento());
+			ps.setString(6, aluno.getDisciplina());
+			
+			ps.setInt(7, id);
 			
 			updated = ps.executeUpdate();
 			
