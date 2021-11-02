@@ -14,7 +14,7 @@ public class TutorAluno {
 	}
 
 	public void setTutorNome(String tutorNome) {
-		if (tutorNome.length() > 0 && 20 >= tutorNome.length())
+		if (tutorNome.length() > -1 && 20 >= tutorNome.length())
 			this.tutorNome = tutorNome;
 		else
 			System.out.println("Digite um tutor valido");
@@ -25,7 +25,7 @@ public class TutorAluno {
 	}
 
 	public void setDepartamento(String departamento) {
-		if (departamento.length() > 0 && 20 >= departamento.length())
+		if (departamento.length() > -1 && 20 >= departamento.length())
 			this.departamento = departamento;
 		else
 			System.out.println("Digite um departamento valido");
@@ -36,7 +36,7 @@ public class TutorAluno {
 	}
 
 	public void setDisciplina(String disciplina) {
-		if (disciplina.length() > 0 && 20 >= disciplina.length())
+		if (disciplina.length() > -1 && 20 >= disciplina.length())
 			this.disciplina = disciplina;
 		else
 			System.out.println("Digite uma disciplina valida");

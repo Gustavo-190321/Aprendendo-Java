@@ -10,8 +10,7 @@ public class Principal {
 		
 		System.out.println("\nInserir um Aluno");
 		System.out.println("Id: ");
-		int id = Integer.parseInt(teclado.nextLine());
-		aluno.setIdAluno(id);
+		aluno.setIdAluno(teclado.nextLine());
 		
 		System.out.println("Nome: ");
 		aluno.setNome(teclado.nextLine());

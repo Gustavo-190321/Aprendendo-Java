@@ -47,7 +47,7 @@ public class AlunoDAO {
 
 		try {
 			ps = connection.prepareStatement(query);
-			ps.setInt(1, aluno.getIdAluno());
+			ps.setString(1, aluno.getIdAluno());
 			ps.setString(2, aluno.getNome());
 			ps.setString(3, aluno.getCpf());
 			ps.setString(4, aluno.getDataNascimento());
@@ -112,7 +112,7 @@ public class AlunoDAO {
 
 				Aluno aluno = new Aluno();
 
-				aluno.setIdAluno(rs.getInt("idAluno"));
+				aluno.setIdAluno(rs.getString("idAluno"));
 				aluno.setNome(rs.getString("nome"));
 				aluno.setCpf(rs.getString("cpf"));
 				aluno.setDataNascimento(rs.getString("dataNascimento"));
@@ -178,7 +178,7 @@ public class AlunoDAO {
 
 				Aluno aluno = new Aluno();
 
-				aluno.setIdAluno(rs.getInt("idAluno"));
+				aluno.setIdAluno(rs.getString("idAluno"));
 				aluno.setNome(rs.getString("nome"));
 				aluno.setCpf(rs.getString("cpf"));
 				aluno.setDataNascimento(rs.getString("dataNascimento"));

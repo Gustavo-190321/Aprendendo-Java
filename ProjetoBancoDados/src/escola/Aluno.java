@@ -2,7 +2,7 @@ package escola;
 
 public class Aluno extends TutorAluno {
 
-	private int idAluno;
+	private String idAluno;
 	private String nome;
 	private String cpf;
 	private String dataNascimento;
@@ -11,12 +11,15 @@ public class Aluno extends TutorAluno {
 
 	}
 
-	public int getIdAluno() {
+	public String getIdAluno() {
 		return idAluno;
 	}
 
-	public void setIdAluno(int idAluno) {
+	public void setIdAluno(String idAluno) {
+		if (idAluno.length() > 0 && 10 >= idAluno.length())
 		this.idAluno = idAluno;
+		else
+			System.out.println("Digite um ID valido");
 	}
 
 	public String getNome() {
