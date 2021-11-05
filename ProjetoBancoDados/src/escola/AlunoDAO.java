@@ -43,7 +43,8 @@ public class AlunoDAO {
 			return false;
 		}
 
-		query = "INSERT INTO tb_aluno (idAluno, nome, cpf, dataNascimento, nomeTutor, departamento, disciplina)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+		query = "INSERT INTO tb_aluno (idAluno, nome, cpf, dataNascimento, nomeTutor, departamento, disciplina)"
+				+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			ps = connection.prepareStatement(query);
@@ -203,12 +204,12 @@ public class AlunoDAO {
 			} catch (Exception ex) {
 				System.out.println("Falha na Operação");
 				System.err.println("SQLException: " + ex.getMessage());
-				
+
 			}
 		}
 
 		ConnectionFactory.closeConnection();
-
+		
 		return lista;
 	}
 
@@ -237,11 +238,11 @@ public class AlunoDAO {
 			ps.setString(4, aluno.getTutorNome());
 			ps.setString(5, aluno.getDepartamento());
 			ps.setString(6, aluno.getDisciplina());
-			
+
 			ps.setInt(7, id);
-			
+
 			updated = ps.executeUpdate();
-			
+
 			if (updated > 0) {
 				System.out.println("Atualizado com Sucesso");
 				mensagem = ATUALIZACAO_SUCESSO;

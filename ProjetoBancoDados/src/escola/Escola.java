@@ -36,7 +36,7 @@ public class Escola {
 
 	public void PesquisarAluno() {
 		System.out.println("\nDigite o nome do aluno:");
-		String nome = teclado.next();
+		String nome = teclado.nextLine();
 		System.out.println("\nAlunos cadastrados:");
 		List<Aluno> lista = alunoDAO.pesquisar(nome);
 		Iterator<Aluno> iterator = lista.iterator();
@@ -46,7 +46,7 @@ public class Escola {
 			System.out.println("Id: "+aluno.getIdAluno() + "\nNome: " + aluno.getNome() + "\nCPF: " + aluno.getCpf() + "\nData de Nascimento: "
 					+ aluno.getDataNascimento());
 			System.out.println();
-		}
+			}
 	}
 
 	public void atualizarAluno(Aluno aluno) {
