@@ -20,6 +20,7 @@ public class Aluno extends TutorAluno {
 		this.idAluno = idAluno;
 		else
 			System.out.println("Digite um ID valido");
+			return;
 	}
 
 	public String getNome() {
@@ -31,6 +32,7 @@ public class Aluno extends TutorAluno {
 			this.nome = nome;
 		else
 			System.out.println("Digite um nome valido");
+			return;
 	}
 
 	public String getCpf() {
@@ -42,6 +44,7 @@ public class Aluno extends TutorAluno {
 			this.cpf = cpf;
 		else
 			System.out.println("Digite um CPF valido");
+			return;
 	}
 
 	public String getDataNascimento() {
@@ -53,7 +56,6 @@ public class Aluno extends TutorAluno {
 			this.dataNascimento = dataNascimento;
 		else
 			System.out.println("Digite uma Data de nascimento valida");
-
 	}
 
 }
