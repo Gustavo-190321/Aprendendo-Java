@@ -44,7 +44,7 @@ public class Escola {
 			Aluno aluno = iterator.next();
 
 			System.out.println("Id: "+aluno.getIdAluno() + "\nNome: " + aluno.getNome() + "\nCPF: " + aluno.getCpf() + "\nData de Nascimento: "
-					+ aluno.getDataNascimento());
+					+ aluno.getDataNascimento() + "\nNome do Tutor: " + aluno.getTutorNome() + "\nDepartamento: " + aluno.getDepartamento() + "\nDisciplina: " + aluno.getDisciplina());
 			System.out.println();
 			}
 	}

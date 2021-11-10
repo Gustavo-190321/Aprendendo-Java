@@ -183,6 +183,9 @@ public class AlunoDAO {
 				aluno.setNome(rs.getString("nome"));
 				aluno.setCpf(rs.getString("cpf"));
 				aluno.setDataNascimento(rs.getString("dataNascimento"));
+				aluno.setTutorNome(rs.getString("nomeTutor"));
+				aluno.setDepartamento(rs.getString("departamento"));
+				aluno.setDisciplina(rs.getString("disciplina"));
 
 				lista.add(aluno);
 				count++;
