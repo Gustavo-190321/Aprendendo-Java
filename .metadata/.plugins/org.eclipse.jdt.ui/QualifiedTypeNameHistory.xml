@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.util.List"/>
     <fullyQualifiedTypeName name="ProjetoInt.Aluno"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
@@ -11,11 +10,17 @@
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="Prova.Funcionario"/>
     <fullyQualifiedTypeName name="escola.Escola"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="NonaAula.PetShop"/>
     <fullyQualifiedTypeName name="NonaAula.Gato"/>
     <fullyQualifiedTypeName name="NonaAula.Cachorro"/>
     <fullyQualifiedTypeName name="NonaAula.Passaro"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="escola.TutorAluno"/>
+    <fullyQualifiedTypeName name="Aula11.Funcionario"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="Aula11.Analista"/>
+    <fullyQualifiedTypeName name="Aula11.Empresa"/>
+    <fullyQualifiedTypeName name="Aula11.Tecnico"/>
 </qualifiedTypeNameHistroy>
